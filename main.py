@@ -21,6 +21,9 @@ clientes, servicios y reservas, implementando:
 - Logs de eventos
 
 """
+# IMPORTACIONES
+
+
 from modelos.cliente import Cliente
 
 from modelos.servicio import (
@@ -43,9 +46,7 @@ from utils.logger import registrar_log
 print("\n=== SISTEMA SOFTWARE FJ ===\n")
 
 
-
-# OPERACIÓN 1
-# CLIENTE VÁLIDO
+# CLIENTE 1
 
 
 try:
@@ -58,66 +59,68 @@ try:
 
     print(cliente1.mostrar_informacion())
 
-# CLIENTE 2
-
-cliente2 = Cliente(
-    "Alejandro Javier De Angel Luquez",
-    "301 4066011",
-    "alejandro76406@gmail.com"
-)
-
-print("\n")
-print(cliente2.mostrar_informacion())
-
-
-# CLIENTE 3
-
-cliente3 = Cliente(
-    "Kevin Andres Ordosgoitia Herrera",
-    "302 4654560",
-    "kevinherrerapro18@gmail.com"
-)
-
-print("\n")
-print(cliente3.mostrar_informacion())
 except ErrorCliente as e:
 
-    print(f"Error cliente: {e}")
+    print(f"Error cliente 1: {e}")
 
 
-
-# OPERACIÓN 2
-# CLIENTE INVÁLIDO
+# CLIENTE 2
 
 
 try:
 
     cliente2 = Cliente(
+        "Alejandro Javier De Angel Luquez",
+        "3014066011",
+        "alejandro76406@gmail.com"
+    )
+
+    print("\n")
+    print(cliente2.mostrar_informacion())
+
+except ErrorCliente as e:
+
+    print(f"Error cliente 2: {e}")
+
+
+# CLIENTE 3
+
+
+try:
+
+    cliente3 = Cliente(
+        "Kevin Andres Ordosgoitia Herrera",
+        "3024654560",
+        "kevinherrerapro18@gmail.com"
+    )
+
+    print("\n")
+    print(cliente3.mostrar_informacion())
+
+except ErrorCliente as e:
+
+    print(f"Error cliente 3: {e}")
+
+
+# CLIENTE INVÁLIDO
+
+
+try:
+
+    cliente_error = Cliente(
         "",
         "ABC123",
         "correo_malo"
     )
 
-    print(cliente2.mostrar_informacion())
+    print(cliente_error.mostrar_informacion())
 
-    reserva3 = Reserva(
-    cliente3,
-    equipo1,
-    5
-)
-
-print("\n")
-print(reserva3.mostrar_reserva())
-
-print(reserva3.procesar_reserva())
 except ErrorCliente as e:
 
     print(f"\nError cliente inválido: {e}")
 
 
-
-# OPERACIÓN 3
-# SERVICIO VÁLIDO
+# SERVICIO 1
 
 
 try:
@@ -133,113 +136,66 @@ try:
 
 except ErrorServicio as e:
 
-    print(f"Error servicio: {e}")
+    print(f"Error servicio 1: {e}")
 
 
-
-# OPERACIÓN 4
-# SERVICIO INVÁLIDO
-
-
-try:
-
-    servicio2 = ReservaSala(
-        "Sala Error",
-        30000,
-        -2
-    )
-
-    print(servicio2.describir_servicio())
-
-except ErrorServicio as e:
-
-    print(f"\nError servicio inválido: {e}")
-
-
-
-# OPERACIÓN 5
-# ALQUILER VÁLIDO
+# SERVICIO 2
 
 
 try:
 
-    equipo1 = AlquilerEquipo(
+    servicio2 = AlquilerEquipo(
         "Laptop Gamer",
         80000,
         3
     )
 
     print("\n")
-    print(equipo1.describir_servicio())
+    print(servicio2.describir_servicio())
 
 except ErrorServicio as e:
 
-    print(f"Error alquiler: {e}")
+    print(f"Error servicio 2: {e}")
 
 
-
-# OPERACIÓN 6
-# ALQUILER INVÁLIDO
-
-try:
-
-    equipo2 = AlquilerEquipo(
-        "PC Error",
-        60000,
-        -5
-    )
-
-    print(equipo2.describir_servicio())
-
-except ErrorServicio as e:
-
-    print(f"\nError alquiler inválido: {e}")
-
-
-
-# OPERACIÓN 7
-# ASESORÍA VÁLIDA
+# SERVICIO 3
 
 
 try:
 
-    asesoria1 = AsesoriaEspecializada(
+    servicio3 = AsesoriaEspecializada(
         "Asesoría IA",
         100000,
         "avanzada"
     )
 
     print("\n")
-    print(asesoria1.describir_servicio())
+    print(servicio3.describir_servicio())
 
 except ErrorServicio as e:
 
-    print(f"Error asesoría: {e}")
+    print(f"Error servicio 3: {e}")
 
 
-
-# OPERACIÓN 8
-# ASESORÍA INVÁLIDA
+# SERVICIO INVÁLIDO
 
 
 try:
 
-    asesoria2 = AsesoriaEspecializada(
-        "Asesoría Error",
-        50000,
-        "experto"
+    servicio_error = ReservaSala(
+        "Sala Error",
+        30000,
+        -5
     )
 
-    print(asesoria2.describir_servicio())
+    print(servicio_error.describir_servicio())
 
 except ErrorServicio as e:
 
-    print(f"\nError asesoría inválida: {e}")
+    print(f"\nError servicio inválido: {e}")
 
 
-
-# OPERACIÓN 9
-# RESERVA EXITOSA
+# RESERVA 1
 
 
 try:
@@ -253,46 +209,78 @@ try:
     print("\n")
     print(reserva1.mostrar_reserva())
 
-    resultado = reserva1.procesar_reserva()
-
-    print(resultado)
+    print(reserva1.procesar_reserva())
 
     print(reserva1.mostrar_reserva())
 
-    reserva2 = Reserva(
-    cliente2,
-    servicio1,
-    2
-)
-
-print("\n")
-print(reserva2.mostrar_reserva())
-
-print(reserva2.procesar_reserva())
 except ErrorReserva as e:
 
-    print(f"Error reserva: {e}")
+    print(f"Error reserva 1: {e}")
 
 
-
-# OPERACIÓN 10
-# RESERVA FALLIDA
+# RESERVA 2
 
 
 try:
 
     reserva2 = Reserva(
+        cliente2,
+        servicio2,
+        3
+    )
+
+    print("\n")
+    print(reserva2.mostrar_reserva())
+
+    print(reserva2.procesar_reserva())
+
+    print(reserva2.mostrar_reserva())
+
+except ErrorReserva as e:
+
+    print(f"Error reserva 2: {e}")
+
+
+
+# RESERVA 3
+
+
+try:
+
+    reserva3 = Reserva(
+        cliente3,
+        servicio3,
+        2
+    )
+
+    print("\n")
+    print(reserva3.mostrar_reserva())
+
+    print(reserva3.procesar_reserva())
+
+    print(reserva3.mostrar_reserva())
+
+except ErrorReserva as e:
+
+    print(f"Error reserva 3: {e}")
+
+
+
+# RESERVA INVÁLIDA
+
+
+try:
+
+    reserva_error = Reserva(
         cliente1,
         servicio1,
         -10
     )
 
     print("\n")
-    print(reserva2.mostrar_reserva())
+    print(reserva_error.mostrar_reserva())
 
-    resultado = reserva2.procesar_reserva()
-
-    print(resultado)
+    print(reserva_error.procesar_reserva())
 
 except ErrorReserva as e:
 
@@ -300,11 +288,13 @@ except ErrorReserva as e:
 
 
 
-# FINAL
+# FINAL DEL SISTEMA
 
 
 finally:
 
-    registrar_log("El sistema finalizó correctamente")
+    registrar_log(
+        "El sistema finalizó correctamente"
+    )
 
     print("\n=== FIN DEL SISTEMA ===")
