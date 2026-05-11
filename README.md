@@ -26,3 +26,4 @@ Sistema orientado a objetos desarrollado en Python para la gestión de clientes,
 -Javid Daniel vega iseda
 -Alejandro javier De Angel luquez
 -Kevid Andres Ordosgoitia herrera
+-MIGUEL EDUARDO PACHECO SAUCEDO
