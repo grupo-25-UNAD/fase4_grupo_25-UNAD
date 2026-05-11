@@ -52,12 +52,34 @@ try:
 
     cliente1 = Cliente(
         "Javid Daniel vega iseda",
-        "123456789",
-        "javi@gmail.com"
+        "3242578214",
+        "jisedavega@gmail.com"
     )
 
     print(cliente1.mostrar_informacion())
 
+# CLIENTE 2
+
+cliente2 = Cliente(
+    "Alejandro Javier De Angel Luquez",
+    "301 4066011",
+    "alejandro76406@gmail.com"
+)
+
+print("\n")
+print(cliente2.mostrar_informacion())
+
+
+# CLIENTE 3
+
+cliente3 = Cliente(
+    "Kevin Andres Ordosgoitia Herrera",
+    "302 4654560",
+    "kevinherrerapro18@gmail.com"
+)
+
+print("\n")
+print(cliente3.mostrar_informacion())
 except ErrorCliente as e:
 
     print(f"Error cliente: {e}")
@@ -78,6 +100,16 @@ try:
 
     print(cliente2.mostrar_informacion())
 
+    reserva3 = Reserva(
+    cliente3,
+    equipo1,
+    5
+)
+
+print("\n")
+print(reserva3.mostrar_reserva())
+
+print(reserva3.procesar_reserva())
 except ErrorCliente as e:
 
     print(f"\nError cliente inválido: {e}")
@@ -227,6 +259,16 @@ try:
 
     print(reserva1.mostrar_reserva())
 
+    reserva2 = Reserva(
+    cliente2,
+    servicio1,
+    2
+)
+
+print("\n")
+print(reserva2.mostrar_reserva())
+
+print(reserva2.procesar_reserva())
 except ErrorReserva as e:
 
     print(f"Error reserva: {e}")
