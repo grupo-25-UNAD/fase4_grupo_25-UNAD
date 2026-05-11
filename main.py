@@ -7,7 +7,7 @@ Desarrollado por:
 Javid Daniel vega iseda
 Alejandro javier De Angel luquez
 Kevid Andres Ordosgoitia herrera
-
+MIGUEL EDUARDO PACHECO SAUCEDO
 
 Descripción:
 Sistema orientado a objetos para gestión de
@@ -46,65 +46,61 @@ from utils.logger import registrar_log
 print("\n=== SISTEMA SOFTWARE FJ ===\n")
 
 
-# CLIENTE 1
+# Registro automático de clientes del sistema
+clientes = []
 
+datos_clientes = [
 
-try:
-
-    cliente1 = Cliente(
-        "Javid Daniel vega iseda",
+    (
+        "Javid Daniel Vega Iseda",
         "3242578214",
         "jisedavega@gmail.com"
-    )
+    ),
 
-    print(cliente1.mostrar_informacion())
-
-except ErrorCliente as e:
-
-    print(f"Error cliente 1: {e}")
-
-
-# CLIENTE 2
-
-
-try:
-
-    cliente2 = Cliente(
+    (
         "Alejandro Javier De Angel Luquez",
         "3014066011",
         "alejandro76406@gmail.com"
-    )
+    ),
 
-    print("\n")
-    print(cliente2.mostrar_informacion())
-
-except ErrorCliente as e:
-
-    print(f"Error cliente 2: {e}")
-
-
-# CLIENTE 3
-
-
-try:
-
-    cliente3 = Cliente(
+    (
         "Kevin Andres Ordosgoitia Herrera",
         "3024654560",
         "kevinherrerapro18@gmail.com"
+    ),
+
+    (
+        "MIGUEL EDUARDO PACHECO SAUCEDO",
+        "3242056541",
+        "migueleduardopachecosaucedo@gmail.com"
     )
-
-    print("\n")
-    print(cliente3.mostrar_informacion())
-
-except ErrorCliente as e:
-
-    print(f"Error cliente 3: {e}")
+]
 
 
-# CLIENTE INVÁLIDO
+# Creación y validación de clientes
+for nombre, documento, correo in datos_clientes:
+
+    try:
+
+        cliente = Cliente(
+            nombre,
+            documento,
+            correo
+        )
+
+        clientes.append(cliente)
+
+        print(cliente.mostrar_informacion())
+        print("\n")
+
+    except ErrorCliente as e:
+
+        print(
+            f"Error registrando cliente: {e}"
+        )
 
 
+# Simulación de cliente inválido
 try:
 
     cliente_error = Cliente(
@@ -117,12 +113,12 @@ try:
 
 except ErrorCliente as e:
 
-    print(f"\nError cliente inválido: {e}")
+    print(
+        f"Error cliente inválido: {e}"
+    )
 
 
-# SERVICIO 1
-
-
+# Creación de servicios disponibles
 try:
 
     servicio1 = ReservaSala(
@@ -131,15 +127,12 @@ try:
         4
     )
 
-    print("\n")
     print(servicio1.describir_servicio())
+    print("\n")
 
 except ErrorServicio as e:
 
     print(f"Error servicio 1: {e}")
-
-
-# SERVICIO 2
 
 
 try:
@@ -150,15 +143,12 @@ try:
         3
     )
 
-    print("\n")
     print(servicio2.describir_servicio())
+    print("\n")
 
 except ErrorServicio as e:
 
     print(f"Error servicio 2: {e}")
-
-
-# SERVICIO 3
 
 
 try:
@@ -169,17 +159,15 @@ try:
         "avanzada"
     )
 
-    print("\n")
     print(servicio3.describir_servicio())
+    print("\n")
 
 except ErrorServicio as e:
 
     print(f"Error servicio 3: {e}")
 
 
-# SERVICIO INVÁLIDO
-
-
+# Simulación de servicio inválido
 try:
 
     servicio_error = ReservaSala(
@@ -192,103 +180,134 @@ try:
 
 except ErrorServicio as e:
 
-    print(f"\nError servicio inválido: {e}")
+    print(
+        f"Error servicio inválido: {e}"
+    )
 
 
-# RESERVA 1
-
-
+# Reservas realizadas por los clientes
 try:
 
     reserva1 = Reserva(
-        cliente1,
+        clientes[0],
         servicio1,
         4
     )
 
+    print(reserva1.mostrar_reserva())
+
+    print(
+        reserva1.procesar_reserva()
+    )
+
+    print(
+        reserva1.mostrar_reserva()
+    )
+
     print("\n")
-    print(reserva1.mostrar_reserva())
-
-    print(reserva1.procesar_reserva())
-
-    print(reserva1.mostrar_reserva())
 
 except ErrorReserva as e:
 
     print(f"Error reserva 1: {e}")
 
 
-# RESERVA 2
-
-
 try:
 
     reserva2 = Reserva(
-        cliente2,
+        clientes[1],
         servicio2,
         3
     )
 
+    print(reserva2.mostrar_reserva())
+
+    print(
+        reserva2.procesar_reserva()
+    )
+
+    print(
+        reserva2.mostrar_reserva()
+    )
+
     print("\n")
-    print(reserva2.mostrar_reserva())
-
-    print(reserva2.procesar_reserva())
-
-    print(reserva2.mostrar_reserva())
 
 except ErrorReserva as e:
 
     print(f"Error reserva 2: {e}")
 
 
-
-# RESERVA 3
-
-
 try:
 
     reserva3 = Reserva(
-        cliente3,
+        clientes[2],
         servicio3,
         2
     )
 
+    print(reserva3.mostrar_reserva())
+
+    print(
+        reserva3.procesar_reserva()
+    )
+
+    print(
+        reserva3.mostrar_reserva()
+    )
+
     print("\n")
-    print(reserva3.mostrar_reserva())
-
-    print(reserva3.procesar_reserva())
-
-    print(reserva3.mostrar_reserva())
 
 except ErrorReserva as e:
 
     print(f"Error reserva 3: {e}")
 
 
+try:
 
-# RESERVA INVÁLIDA
+    reserva4 = Reserva(
+        clientes[3],
+        servicio1,
+        5
+    )
+
+    print(reserva4.mostrar_reserva())
+
+    print(
+        reserva4.procesar_reserva()
+    )
+
+    print(
+        reserva4.mostrar_reserva()
+    )
+
+    print("\n")
+
+except ErrorReserva as e:
+
+    print(f"Error reserva 4: {e}")
 
 
+# Simulación de reserva inválida
 try:
 
     reserva_error = Reserva(
-        cliente1,
+        clientes[0],
         servicio1,
         -10
     )
 
-    print("\n")
-    print(reserva_error.mostrar_reserva())
+    print(
+        reserva_error.mostrar_reserva()
+    )
 
-    print(reserva_error.procesar_reserva())
+    print(
+        reserva_error.procesar_reserva()
+    )
 
 except ErrorReserva as e:
 
-    print(f"\nError reserva inválida: {e}")
-
-
-
-# FINAL DEL SISTEMA
+    print(
+        f"Error reserva inválida: {e}"
+    )
 
 
 finally:
@@ -297,4 +316,4 @@ finally:
         "El sistema finalizó correctamente"
     )
 
-    print("\n=== FIN DEL SISTEMA ===")
+    print("=== FIN DEL SISTEMA ===")
