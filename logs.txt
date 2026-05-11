@@ -1,0 +1,32 @@
+[2026-05-10 21:20:42] -> Nombre asignado correctamente: Javid Daniel Vega Iseda
+[2026-05-10 21:20:42] -> Documento asignado correctamente: 3242578214
+[2026-05-10 21:20:42] -> Correo asignado correctamente: jisedavega@gmail.com
+[2026-05-10 21:20:42] -> Nombre asignado correctamente: Alejandro Javier De Angel Luquez
+[2026-05-10 21:20:42] -> Documento asignado correctamente: 3014066011
+[2026-05-10 21:20:42] -> Correo asignado correctamente: alejandro76406@gmail.com
+[2026-05-10 21:20:42] -> Nombre asignado correctamente: Kevin Andres Ordosgoitia Herrera
+[2026-05-10 21:20:42] -> Documento asignado correctamente: 3024654560
+[2026-05-10 21:20:42] -> Correo asignado correctamente: kevinherrerapro18@gmail.com
+[2026-05-10 21:20:42] -> Nombre asignado correctamente: MIGUEL EDUARDO PACHECO SAUCEDO
+[2026-05-10 21:20:42] -> Documento asignado correctamente: 3242056541
+[2026-05-10 21:20:42] -> Correo asignado correctamente: migueleduardopachecosaucedo@gmail.com
+[2026-05-10 21:20:42] -> ERROR CLIENTE: El nombre no puede estar vacío
+[2026-05-10 21:20:42] -> ReservaSala creada correctamente: Sala Premium
+[2026-05-10 21:20:42] -> AlquilerEquipo creado: Laptop Gamer
+[2026-05-10 21:20:42] -> Asesoría creada correctamente: Asesoría IA
+[2026-05-10 21:20:42] -> ERROR SERVICIO: Las horas deben ser mayores a cero
+[2026-05-10 21:20:42] -> Reserva confirmada para Javid Daniel Vega Iseda
+[2026-05-10 21:20:42] -> Procesamiento realizado correctamente
+[2026-05-10 21:20:42] -> Finalizó intento de procesamiento
+[2026-05-10 21:20:42] -> Reserva confirmada para Alejandro Javier De Angel Luquez
+[2026-05-10 21:20:42] -> Procesamiento realizado correctamente
+[2026-05-10 21:20:42] -> Finalizó intento de procesamiento
+[2026-05-10 21:20:42] -> Reserva confirmada para Kevin Andres Ordosgoitia Herrera
+[2026-05-10 21:20:42] -> Procesamiento realizado correctamente
+[2026-05-10 21:20:42] -> Finalizó intento de procesamiento
+[2026-05-10 21:20:42] -> Reserva confirmada para MIGUEL EDUARDO PACHECO SAUCEDO
+[2026-05-10 21:20:42] -> Procesamiento realizado correctamente
+[2026-05-10 21:20:42] -> Finalizó intento de procesamiento
+[2026-05-10 21:20:42] -> ERROR RESERVA: La duración debe ser mayor a cero
+[2026-05-10 21:20:42] -> Finalizó intento de procesamiento
+[2026-05-10 21:20:42] -> El sistema finalizó correctamente
